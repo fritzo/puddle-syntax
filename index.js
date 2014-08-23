@@ -1,6 +1,6 @@
 module.exports = {
     compiler: require('./lib/compiler'),
+    pretty: require('./lib/pretty'),
     tree: require('./lib/tree'),
-    cursors: require('./lib/cursors'),
-    pretty: require('./lib/pretty')
+    cursor: require('./lib/cursor'),
 };
