@@ -1,0 +1,33 @@
+{
+  "name": "puddle-lang",
+  "version": "0.0.0",
+  "description": "Language of the Puddle coding environment",
+  "main": "index.js",
+  "dependencies": {
+    "debug": "^1.0.4",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.4",
+    "mocha": "^1.21.4"
+  },
+  "scripts": {
+    "lint": "jshint lib *.js",
+    "test": "npm run lint && mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fritzo/puddle-lang.git"
+  },
+  "keywords": [
+    "pomagma",
+    "puddle",
+    "language"
+  ],
+  "author": "Fritz Obermeyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fritzo/puddle-lang/issues"
+  },
+  "homepage": "https://github.com/fritzo/puddle-lang"
+}
