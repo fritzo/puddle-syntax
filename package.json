@@ -1,6 +1,6 @@
 {
   "name": "puddle-lang",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Language of the Puddle coding environment",
   "main": "index.js",
   "dependencies": {
