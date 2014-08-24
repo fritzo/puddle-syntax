@@ -112,7 +112,7 @@ Signature:
     compiler.dumpLine : term -> line
     compiler.print : term -> string
     compiler.enumerateFresh : int -> string (a variable name)
-    compiler.substitute : name * term -> term
+    compiler.substitute : name * term * term -> nil
     compiler.parenthesize : term -> term
     compiler.fold : /\f: (string * any -> t). term -> t
 
@@ -123,6 +123,12 @@ Examples:
 
     compiler.dump(["APP", ["VAR", "f"], ["VAR", "x"]]);
     // = "APP VAR f VAR x"
+
+    compiler.enumerateFresh(0);  // = "a"
+    compiler.enumerateFresh(1);  // = "b"
+    compiler.enumerateFresh(2);  // = "c"
+
+    compiler.substitute(name, def, body);
 
 ### Function `syntax.pretty` <a name="pretty"/>
 
@@ -153,6 +159,11 @@ Examples:
     tree.dump({"name": "VAR", "varName": "x", "above": null, "below": []});
     // = ["VAR", "x"]
 
+    var root = tree.getRoot(node);
+    var varList = tree.getBoundAbove(term);  // -> ['a', 'b']
+    var varSet = tree.getVars(term);         // -> {'a': null, 'b': null}
+    var name = tree.getFresh(term);          // -> 'c'
+
 ### Module `syntax.cursor` <a name="cursor"/>
 
 Signature:
@@ -161,7 +172,12 @@ Signature:
     remove : cursor node -> nil
     insertAbove : cursor node * tree node -> nil
     replaceBelow : cursor node * tree node -> nil
-    tryMove : cursor node * direction -> nil (direction one of 'U' 'D' 'L' 'R')
+    tryMove : cursor node * direction -> bool (direction one of 'U' 'D' 'L' 'R')
+
+Examples:
+
+    var direction = 'U';  // or 'D', 'L', 'R'
+    var success = syntax.cursor.tryMove(cursor, direction);
 
 ## License
 
