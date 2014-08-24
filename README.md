@@ -95,7 +95,7 @@ This module deals with four formats of data.
             ]
         };
 
-### Module `syntax.compiler`
+### Module `syntax.compiler` <a name="compiler"/>
 
 Signature:
 
@@ -118,26 +118,26 @@ Examples:
     compiler.dump(["APP", ["VAR", "f"], ["VAR", "x"]]);
     // = "APP VAR f VAR x"
 
-### Function `syntax.pretty`
+### Function `syntax.pretty` <a name="pretty"/>
 
 Signature:
 
-    // pretty : term -> string
+    pretty : term -> string
 
 Examples:
 
     pretty("LAMBDA VAR x APP VAR f VAR x");
     // = "\ x f x"
 
-### Module `syntax.tree`
+### Module `syntax.tree` <a name="tree"/>
 
 Signature:
 
-    // tree.load : term -> node
-    // tree.dump : node -> term
-    // getRoot : node -> node
-    // getLocals : node -> Array of strings (variable names)
-    // getFresh : node -> string (a variable name)
+    tree.load : term -> node
+    tree.dump : node -> term
+    getRoot : node -> node
+    getLocals : node -> Array of strings (variable names)
+    getFresh : node -> string (a variable name)
 
 Examples:
 
@@ -147,7 +147,7 @@ Examples:
     tree.dump({"name": "VAR", "varName": "x", "above": null, "below": []});
     // = ["VAR", "x"]
 
-### Module `syntax.cursor`
+### Module `syntax.cursor` <a name="cursor"/>
 
 ## License
 
