@@ -139,11 +139,11 @@ Examples:
 
 Signature:
 
-    tree.load : term -> node
-    tree.dump : node -> term
-    getRoot : node -> node
-    getLocals : node -> Array of strings (variable names)
-    getFresh : node -> string (a variable name)
+    tree.load : term -> tree node
+    tree.dump : tree node -> term
+    getRoot : tree node -> tree node
+    getLocals : tree node -> Array of strings (variable names)
+    getFresh : tree node -> string (a variable name)
 
 Examples:
 
@@ -154,6 +154,14 @@ Examples:
     // = ["VAR", "x"]
 
 ### Module `syntax.cursor` <a name="cursor"/>
+
+Signature:
+
+    create : nil -> cursor node
+    remove : cursor node -> nil
+    insertAbove : cursor node * tree node -> nil
+    replaceBelow : cursor node * tree node -> nil
+    tryMove : cursor node * direction -> nil (direction one of 'U' 'D' 'L' 'R')
 
 ## License
 
