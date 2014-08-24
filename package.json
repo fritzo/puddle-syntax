@@ -1,7 +1,7 @@
 {
-  "name": "puddle-lang",
+  "name": "puddle-syntax",
   "version": "0.0.1",
-  "description": "Language of the Puddle coding environment",
+  "description": "Syntax tools the Puddle coding environment",
   "main": "index.js",
   "dependencies": {
     "debug": "^1.0.4",
