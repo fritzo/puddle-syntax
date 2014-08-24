@@ -11,7 +11,13 @@ Syntax tools for the
 
     var syntax = require('puddle-syntax');
 
-### Data Formats
+* [Data Formats](#formats)
+* [Module `syntax.compiler`](#compiler)
+* [Module `syntax.pretty`](#pretty)
+* [Module `syntax.tree`](#tree)
+* [Module `syntax.cursor`](#cursor)
+
+### Data Formats <a name="formats"/>
 
 This module deals with four formats of data.
 
