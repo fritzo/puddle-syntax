@@ -3,4 +3,5 @@ module.exports = {
     pretty: require('./lib/pretty'),
     tree: require('./lib/tree'),
     cursor: require('./lib/cursor'),
+    tokens: require('./lib/tokens'),
 };

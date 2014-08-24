@@ -160,9 +160,9 @@ Examples:
     // = ["VAR", "x"]
 
     var root = tree.getRoot(node);
-    var varList = tree.getBoundAbove(term);  // -> ['a', 'b']
-    var varSet = tree.getVars(term);         // -> {'a': null, 'b': null}
-    var name = tree.getFresh(term);          // -> 'c'
+    var varList = tree.getBoundAbove(term);  // -> ["a", "b"]
+    var varSet = tree.getVars(term);         // -> {"a": null, "b": null}
+    var name = tree.getFresh(term);          // -> "c"
 
 ### Module `syntax.cursor` <a name="cursor"/>
 
@@ -172,12 +172,32 @@ Signature:
     remove : cursor node -> nil
     insertAbove : cursor node * tree node -> nil
     replaceBelow : cursor node * tree node -> nil
-    tryMove : cursor node * direction -> bool (direction one of 'U' 'D' 'L' 'R')
+    tryMove : cursor node * direction -> bool (direction one of "U" "D" "L" "R")
 
 Examples:
 
-    var direction = 'U';  // or 'D', 'L', 'R'
+    var direction = "U";  // or "D", "L", "R"
     var success = syntax.cursor.tryMove(cursor, direction);
+
+### Module `syntax.tokens` <a name="tokens"/>
+
+Signature:
+
+    tokens.isToken : string -> bool
+    tokens.isKeyword : string -> bool
+    tokens.isLocal : string -> bool
+    tokens.isGlobal : string -> bool
+    tokens.isFreeVariables : string -> object (set of free vars)
+
+Examples:
+
+    assert(tokens.isToken("a"));
+    assert(tokens.isKeyword("JOIN"));
+    assert(tokens.isLocal("a"));
+    assert(tokens.isGlobal("util.pair"));
+
+    tokens.getFreeVariables("APP VAR unqualified VAR fully.qualified.name");
+    // -> {"fully.qualified.name": null}
 
 ## License
 
