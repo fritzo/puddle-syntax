@@ -1,4 +1,7 @@
 'use strict';
 
+var mocha = require('mocha');
+var test = require('../lib/test.js');
 require('../index.js');
-require('../lib/test.js').runAll();
+
+test.runAll(mocha);
