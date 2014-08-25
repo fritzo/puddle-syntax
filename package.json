@@ -12,8 +12,8 @@
     "mocha": "^1.21.4"
   },
   "scripts": {
-    "lint": "jshint lib *.js",
-    "test": "npm run lint && mocha test.js"
+    "lint": "jshint lib test *.js",
+    "test": "npm run lint && mocha"
   },
   "repository": {
     "type": "git",
