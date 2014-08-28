@@ -138,7 +138,7 @@ Signature:
 
 Examples:
 
-    pretty("LAMBDA VAR x APP VAR f VAR x");
+    pretty(["LAMBDA, ["VAR", "x"], ["APP", ["VAR", "f"], ["VAR", "x"]]]);
     // = "\ x f x"
 
 ### Module `syntax.tree` <a name="tree"/>
