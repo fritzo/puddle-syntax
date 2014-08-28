@@ -1,6 +1,6 @@
 {
   "name": "puddle-syntax",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Syntax tools the Puddle coding environment",
   "main": "index.js",
   "dependencies": {
