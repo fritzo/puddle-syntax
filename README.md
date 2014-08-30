@@ -13,9 +13,11 @@ Syntax tools for the
 
 * [Data Formats](#formats)
 * [Module `syntax.compiler`](#compiler)
+* [Module `syntax.fragments`](#fragments)
 * [Module `syntax.pretty`](#pretty)
 * [Module `syntax.tree`](#tree)
 * [Module `syntax.cursor`](#cursor)
+* [Module `syntax.tokens`](#tokens)
 
 ### Data Formats <a name="formats"/>
 
@@ -129,6 +131,13 @@ Examples:
     compiler.enumerateFresh(2);  // = "c"
 
     compiler.substitute(name, def, body);
+
+### Module `syntax.fragments` <a name="fragments"/>
+
+Signature:
+
+    fragments.combinators : subset of compiler.symbols
+    fragments.lambda : subset of compiler.symbols
 
 ### Function `syntax.pretty` <a name="pretty"/>
 
