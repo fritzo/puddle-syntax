@@ -7,17 +7,17 @@
 Syntax tools for the
 [Puddle](https://github.com/fritzo/puddle) coding environment
 
-## APi Reference
+## API Reference
 
     var syntax = require('puddle-syntax');
 
-* [Data Formats](#formats)
-* [Module `syntax.compiler`](#compiler)
-* [Module `syntax.fragments`](#fragments)
-* [Module `syntax.pretty`](#pretty)
-* [Module `syntax.tree`](#tree)
-* [Module `syntax.cursor`](#cursor)
-* [Module `syntax.tokens`](#tokens)
+* [Data Formats](#formats): Codes, Terms, and Trees
+* [Module `syntax.compiler`](#compiler): syntactic algorithms
+* [Module `syntax.fragments`](#fragments): subsets of `compiler.symbols`
+* [Module `syntax.pretty`](#pretty): pretty printing
+* [Module `syntax.tree`](#tree): tree data structures
+* [Module `syntax.cursor`](#cursor): operations on cursor nodes
+* [Module `syntax.tokens`](#tokens): tools for token classification
 
 ### Data Formats <a name="formats"/>
 
@@ -87,9 +87,10 @@ This module deals with three formats of data.
 Signature:
 
     compiler.symbols : object(string | function) (constructors for terms)
-    compiler.load : code -> term
-    compiler.dump : term -> code
     compiler.print : term -> string
+    compiler.parse : string -> term
+    compiler.load : code -> term  // compatible with pomagma analyst
+    compiler.dump : term -> code  // compatible with pomagma analyst
     compiler.enumerateFresh : int -> string (a variable name)
     compiler.substitute : name * term * term -> nil
     compiler.parenthesize : term -> term
