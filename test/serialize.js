@@ -23,4 +23,8 @@ mocha.suite('serialize', function () {
     mocha.test('works on datasets.curryTerms', function () {
         assert.inverses(compiler.print, compiler.parse, datasets.curryTerms);
     });
+
+    mocha.test('works on datasets.churchTerms', function () {
+        assert.inverses(compiler.print, compiler.parse, datasets.churchTerms);
+    });
 });
