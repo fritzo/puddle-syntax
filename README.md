@@ -21,7 +21,7 @@ Syntax tools for the
 
 ### Data Formats <a name="formats"/>
 
-This module deals with four formats of data.
+This module deals with three formats of data.
 
 1.  Codes - Immutable space-delimited lists of tokens.
 
@@ -39,28 +39,7 @@ This module deals with four formats of data.
 
         "ASSERT EQUAL APP VAR two I I"
 
-2.  Lines - Immutable objects with a `code` field and
-    a `name` field that is either `null` or a string.
-    Each line is either an assertion or a definition;
-    assertions have `name = null` and definitions define `name` by their `code`.
-
-    **JSON Serializable:** yes
-
-    **Examples:**
-
-        // a definition
-        {
-            "name": "two",
-            "code": "LAMBDA VAR f LAMBDA VAR x APP VAR f APP VAR x VAR x"
-        }
-
-        // an assertion
-        {
-            "name": null,
-            "code": "EQUAL APP VAR two I I"
-        }
-
-3.  Terms - Immutable array-representations of abstract syntax trees.
+2.  Terms - Immutable array-representations of abstract syntax trees.
 
     **JSON Serializable:** yes
 
@@ -84,7 +63,7 @@ This module deals with four formats of data.
             ]
         ]
 
-4.  Trees - Mutable cross-linked abstract syntax trees for easy traversal.
+3.  Trees - Mutable cross-linked abstract syntax trees for easy traversal.
 
     **JSON Serializable:** no, because of cycles
 
@@ -110,8 +89,6 @@ Signature:
     compiler.symbols : object(string | function) (constructors for terms)
     compiler.load : code -> term
     compiler.dump : term -> code
-    compiler.loadLine : line -> term
-    compiler.dumpLine : term -> line
     compiler.print : term -> string
     compiler.enumerateFresh : int -> string (a variable name)
     compiler.substitute : name * term * term -> nil
