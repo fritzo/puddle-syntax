@@ -6,6 +6,7 @@ var assert = require('../lib/assert');
 var datasets = require('./lib/datasets');
 
 mocha.suite('serialize', function () {
+
     mocha.test('print;parse = id', function () {
         var examples = [
             'VAR x',
