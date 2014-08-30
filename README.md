@@ -13,7 +13,6 @@ Syntax tools for the
 
 * [Data Formats](#formats): Codes, Terms, and Trees
 * [Module `syntax.compiler`](#compiler): syntactic algorithms
-* [Module `syntax.fragments`](#fragments): subsets of `compiler.symbols`
 * [Module `syntax.pretty`](#pretty): pretty printing
 * [Module `syntax.tree`](#tree): tree data structures
 * [Module `syntax.cursor`](#cursor): operations on cursor nodes
@@ -86,7 +85,8 @@ This module deals with three formats of data.
 
 Signature:
 
-    compiler.symbols : object(string | function) (constructors for terms)
+    compiler.fragments.curry : subset of compiler.symbols
+    compiler.fragments.church : subset of compiler.symbols
     compiler.print : term -> string
     compiler.parse : string -> term
     compiler.load : code -> term  // compatible with pomagma analyst
@@ -109,13 +109,6 @@ Examples:
     compiler.enumerateFresh(2);  // = "c"
 
     compiler.substitute(name, def, body);
-
-### Module `syntax.fragments` <a name="fragments"/>
-
-Signature:
-
-    fragments.combinators : subset of compiler.symbols
-    fragments.lambda : subset of compiler.symbols
 
 ### Function `syntax.pretty` <a name="pretty"/>
 

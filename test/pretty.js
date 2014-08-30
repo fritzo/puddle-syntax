@@ -15,7 +15,7 @@ mocha.suite('pretty', function () {
             ['APP APP VAR a VAR b VAR c', 'a b c'],
             ['APP VAR a APP VAR b VAR c', 'a (b c)']
         ];
-        assert.forward(_.compose(pretty, compiler.load), examples);
+        assert.forward(_.compose(pretty, compiler.parse), examples);
     });
 
     mocha.test('is one-to-one', function () {
