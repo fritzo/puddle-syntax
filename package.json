@@ -1,11 +1,11 @@
 {
   "name": "puddle-syntax",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Syntax tools for the Puddle coding environment",
   "main": "index.js",
   "dependencies": {
     "debug": "^1.0.4",
-    "underscore": "^1.6.0"
+    "lodash": "^2.4.1"
   },
   "devDependencies": {
     "jshint": "^2.5.4",

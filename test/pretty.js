@@ -1,6 +1,6 @@
 'use strict';
 
-var _ = require('underscore');
+var _ = require('lodash');
 var assert = require('assert');
 var mocha = require('mocha');
 var compiler = require('../lib/compiler');

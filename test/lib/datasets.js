@@ -2,7 +2,7 @@
 
 var stats = require('../../lib/stats');
 var grammar = require('../../lib/grammar');
-var _ = require('underscore');
+var _ = require('lodash');
 var compiler = require('../../lib/compiler');
 var tree = require('../../lib/tree');
 
