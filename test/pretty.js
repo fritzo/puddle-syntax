@@ -18,19 +18,7 @@ mocha.suite('pretty', function () {
         assert.forward(_.compose(pretty, compiler.parse), examples);
     });
 
-    mocha.test('is one-to-one', function () {
-        var seen = {};
-        datasets.codes.forEach(function (code) {
-            var term = compiler.load(code);
-            var result = pretty(term);
-            assert(
-                !_.has(seen, result),
-                'pretty conflict:' +
-                '\n  ' + seen[result] +
-                '\n  ' + code +
-                '\nboth map to ' +
-                '\n  ' + result);
-            seen[result] = code;
-        });
+    mocha.test('is one-to-one on churchTerms', function () {
+        assert.injects(pretty, datasets.churchTerms);
     });
 });

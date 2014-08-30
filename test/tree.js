@@ -18,7 +18,7 @@ mocha.suite('tree', function () {
         assert.inverses(tree.load, tree.dump, _.map(examples, compiler.load));
     });
 
-    mocha.test('load;dump on datasets.terms', function () {
-        assert.inverses(tree.load, tree.dump, datasets.terms);
+    mocha.test('load;dump on datasets.churchTerms', function () {
+        assert.inverses(tree.load, tree.dump, datasets.churchTerms);
     });
 });

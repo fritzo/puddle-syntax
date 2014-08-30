@@ -9,11 +9,13 @@ var tree = require('../../lib/tree');
 var SAMPLE_COUNT = 1000;
 
 var codes = stats.sampleUnique(grammar.sampleCode, SAMPLE_COUNT);
-var terms = _.map(codes, compiler.load);
-var nodes = _.map(terms, tree.load);
+var curryTerms = _.map(codes, compiler.parse);
+var churchTerms = _.map(codes, compiler.load);
+var nodes = _.map(churchTerms, tree.load);
 
 module.exports = {
     codes: codes,
-    terms: terms,
+    curryTerms: curryTerms,
+    churchTerms: churchTerms,
     nodes: nodes,
 };

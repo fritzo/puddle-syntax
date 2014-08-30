@@ -20,7 +20,7 @@ mocha.suite('serialize', function () {
         assert.inverses(compiler.parse, compiler.print, datasets.codes);
     });
 
-    mocha.test('works on datasets.terms', function () {
-        assert.inverses(compiler.print, compiler.parse, datasets.terms);
+    mocha.test('works on datasets.curryTerms', function () {
+        assert.inverses(compiler.print, compiler.parse, datasets.curryTerms);
     });
 });
