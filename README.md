@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/fritzo/puddle-syntax.svg?branch=master)](http://travis-ci.org/fritzo/puddle-syntax)
 [![NPM Version](https://badge.fury.io/js/puddle-syntax.svg)](https://www.npmjs.org/package/puddle-syntax)
 [![NPM Dependencies](https://david-dm.org/fritzo/puddle-syntax.svg)](https://www.npmjs.org/package/puddle-syntax)
+[![Coverage Status](https://img.shields.io/coveralls/pomagma/puddle-syntax.svg)](https://coveralls.io/r/pomagma/puddle-syntax)
 
 # puddle-syntax
 
