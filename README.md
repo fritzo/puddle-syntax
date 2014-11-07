@@ -16,7 +16,8 @@ Syntax tools for the
 * [Module `syntax.compiler`](#compiler): syntactic algorithms
 * [Module `syntax.pretty`](#pretty): pretty printing
 * [Module `syntax.tree`](#tree): tree data structures
-* [Module `syntax.cursor`](#cursor): operations on cursor nodes
+* [Module `syntax.cursorTerm`](#cursor-term): operations on terms with cursors
+* [Module `syntax.cursor`](#cursor): operations on cursor nodes of trees
 * [Module `syntax.tokens`](#tokens): tools for token classification
 
 ### Data Formats <a name="formats"/>
@@ -167,6 +168,24 @@ Examples:
     var varList = tree.getBoundAbove(term);  // -> ["a", "b"]
     var varSet = tree.getVars(term);         // -> {"a": null, "b": null}
     var name = tree.getFresh(term);          // -> "c"
+
+### Module `syntax.cursor-term` <a name="cursor-term"/>
+
+Signature:
+
+    insertCursor : term * address -> term
+    removeCursor : term -> term * address
+
+Examples:
+
+    var x = VAR("x");
+    var term = LAMBDA(x, APP(x, x));
+    insertCursor(term, []);          // -> CURSOR(LAMBDA(x, APP(x, x)))
+    insertCursor(term, [1]);         // -> LAMBDA(CURSOR(x), APP(x, x))
+    insertCursor(term, [2]);         // -> LAMBDA(x, CURSOR(APP(x, x)))
+    insertCursor(term, [2, 1]);      // -> LAMBDA(x, APP(CURSOR(x), x))
+    insertCursor(term, [2, 2]);      // -> LAMBDA(x, APP(x, CURSOR(x)))
+    removeCursor(APP(CURSOR(x), x))  // -> {term: APP(x, x), address: [1]}
 
 ### Module `syntax.cursor` <a name="cursor"/>
 
