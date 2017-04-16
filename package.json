@@ -8,12 +8,17 @@
     "lodash": "^2.4.1"
   },
   "devDependencies": {
+    "coveralls": "^2.11.1",
+    "istanbul": "^0.3.2",
     "jshint": "^2.5.4",
     "mocha": "^1.21.4"
   },
   "scripts": {
-    "lint": "jshint lib test *.js",
-    "test": "npm run lint && mocha --timeout 60000"
+    "coverage": "istanbul check-coverage _mocha",
+    "coveralls": "coveralls < ./coverage/lcov.info",
+    "lint": "jshint .",
+    "mocha": "istanbul cover _mocha -- --timeout 60000",
+    "test": "npm run lint && npm run mocha && npm run coverage && npm run coveralls"
   },
   "repository": {
     "type": "git",
